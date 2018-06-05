@@ -1,0 +1,55 @@
+
+// margin: 10px(n*10) 0;
+.generate-margin(5);
+
+.generate-margin(@n, @i: 1) when (@i =< @n) {
+  .mg-@{i}0 {
+    margin: (@i *10px) 0;
+  }
+  .mg-l-@{i}0 {
+    margin-left: (@i *10px);
+  }
+  .mg-r-@{i}0 {
+    margin-right: (@i *10px);
+  }
+  .mg-t-@{i}0 {
+    margin-top: (@i *10px);
+  }
+  .mg-b-@{i}0 {
+    margin-bottom: (@i *10px);
+  }
+  .generate-margin(@n, (@i + 1));
+}
+
+
+// padding
+// padding: 10px(n*10) 0;
+.generate-padding(5);
+
+.generate-padding(@n, @i: 1) when (@i =< @n) {
+  .pd-@{i}0 {
+    padding: (@i *10px) 0;
+  }
+  .pd-l-@{i}0 {
+    padding-left: (@i *10px);
+  }
+  .pd-r-@{i}0 {
+    padding-right: (@i *10px);
+  }
+  .pd-t-@{i}0 {
+    padding-top: (@i *10px);
+  }
+  .pd-b-@{i}0 {
+    padding-bottom: (@i *10px);
+  }
+  .generate-padding(@n, (@i + 1));
+}
+
+.generate-fontSize(8);
+
+.generate-fontSize(@n, @i: 2) when (@i =< @n) {
+  .font-1@{i} {
+    font-size: (@i*1px+10);
+  }
+  .generate-fontSize(@n, (@i + 1));
+}
